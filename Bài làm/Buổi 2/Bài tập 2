@@ -1,0 +1,27 @@
+#!/bin/bash
+
+clear
+
+# Tìm thông tin ngày giờ hiện tại
+now=$(date +"%d/%m/%Y %H:%M:%S")
+
+# Tìm tên người dùng đang đăng nhập
+username=$(whoami)
+
+# Tìm thư mục hiện hành
+cwd=$(pwd)
+
+# Tìm thư mục cá nhân
+homedir=$(cd ~; pwd)
+
+# Hiển thị thông tin
+echo "*****************************************"
+echo "Today is: $now"
+echo "Hello $username !!!"
+echo "Your current working directory: $cwd"
+echo "Your home directory: $homedir"
+echo "Please press any key to finish:"
+read -n 1
+echo "                    Thank you very much!!"
+echo "*****************************************"
+

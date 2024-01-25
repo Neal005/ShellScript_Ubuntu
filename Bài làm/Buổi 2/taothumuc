@@ -1,0 +1,16 @@
+#!/bin/bash
+
+clear
+
+# Nhập vào tên thư mục muốn tạo
+echo "Nhap ten thu muc muon tao: "
+read dir
+
+# Tạo thư mục
+mkdir -p $dir
+
+# Kiểm tra xem thư mục đã được tạo thành công hay chưa
+if [ $? -ne 0 ]; then
+  echo "Khong the tao duoc thu muc!!!"
+fi
+

@@ -1,0 +1,17 @@
+#!/bin/bash
+
+clear
+
+# Kiểm tra xem có truyền vào 2 tham số hay không
+if [ $# -ne 2 ]; then
+  echo "Khong the thuc hien vi khong truyen du 2 tham so."
+  exit 1
+fi
+
+# Lấy giá trị của các tham số
+cmd1=$1
+arg1=$2
+
+# Thực thi lệnh
+eval $cmd1 $arg1
+
