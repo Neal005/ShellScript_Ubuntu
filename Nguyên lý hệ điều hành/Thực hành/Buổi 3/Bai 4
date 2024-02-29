@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Tính tổng dãy số nguyên từ 1 đến n
+read -p "Nhập n: " n
+
+total=0
+for ((i=1;i<=n;i++)); do
+  total=$((total + i))
+done
+
+echo "Tổng dãy số từ 1 đến $n là: $total"
+

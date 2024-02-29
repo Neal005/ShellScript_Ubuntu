@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Tạo n thư mục cho n người dùng
+read -p "Nhập số người dùng: " n
+
+for ((i=1;i<=n;i++)); do
+  username="user_$i"
+  echo "Tạo thư mục cho $username"
+  printf "\n"
+  mkdir "$username"
+done

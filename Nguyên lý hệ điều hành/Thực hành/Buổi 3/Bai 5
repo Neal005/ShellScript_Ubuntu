@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Hỏi người dùng có muốn tiếp tục
+while true; do
+  # Hiển thị bảng cửu chương
+  printf "\n"
+  read -p "Nhập số: " n
+
+  for i in $(seq 1 10); do
+    echo "$i x $n = $((i * n))"
+  done
+  
+  while true; do
+    read -p "Bạn có muốn tiếp tục (y/n)? " answer
+    case $answer in
+      y) break;;
+      n) exit ;;
+      *) echo "Lựa chọn không hợp lệ. Vui lòng nhập y hoặc n." ;;
+    esac
+  done
+done
+
