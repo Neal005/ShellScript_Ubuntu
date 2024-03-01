@@ -1,16 +1,20 @@
 #!/bin/bash
 
+read -p "Nhap n: " n
+
+echo "Hình tam giác"
 # Hiển thị hình tam giác
-for ((i=1;i<=10;i++)); do
+for ((i=1;i<=n;i++)); do
   for ((j=1;j<=i;j++)); do
     printf "*"
   done
   echo
 done
 
+echo "Ma trận số"
 # Hiển thị số
-for i in {1..5}; do
-  for j in {1..5}; do
+for ((i=1;i<=n;i++)); do
+  for ((j=1;j<=n;j++)); do
     printf "$j "
   done
   echo

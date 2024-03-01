@@ -4,8 +4,11 @@
 read -p "Nhập số người dùng: " n
 
 for ((i=1;i<=n;i++)); do
-  username="user_$i"
-  echo "Tạo thư mục cho $username"
-  printf "\n"
-  mkdir "$username"
+  username="USER_$i"
+  mkdir "$username" 2>/dev/null
+  if [ $? == 0 ]; then
+    echo "Tạo thư mục $username thành công!"
+  else
+    echo "Không thể tạo thư mục $username!"
+  fi
 done

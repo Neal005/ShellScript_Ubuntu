@@ -1,5 +1,6 @@
 #!/bin/bash
 
+echo "**Hệ Phương trình bậc nhất**"
 # Nhập hệ số a và b từ người dùng
 read -p "Nhập hệ số a: " a
 read -p "Nhập hệ số b: " b
@@ -13,7 +14,7 @@ if [ $a -eq 0 ]; then
   fi
 else
   # Tính nghiệm
-  x=$(echo "scale=2; $b / $a" | bc)
-  echo "Phương trình có nghiệm duy nhất x = $x"
+  x=$(echo "scale=2; -$b / $a" | bc)
+  echo "Phương trình $a x + $b = 0, có nghiệm duy nhất là: x = $x"
 fi
 
