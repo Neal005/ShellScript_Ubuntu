@@ -1,0 +1,16 @@
+#!/bin/bash
+
+stty -echoctl
+
+trap 'continue' 2
+
+for ((i=6;i>=1;i--)); do
+  echo -n "$i "
+  sleep 5
+done
+
+echo
+
+stty echoctl
+
+trap 2

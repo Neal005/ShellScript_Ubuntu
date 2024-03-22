@@ -1,0 +1,64 @@
+#!/bin/bash
+
+stty -echoctl
+
+trap 'status=1; echo; break' 2
+
+# Khởi tạo biến để lưu trữ tên tập tin hiện tại
+file=""
+
+# Lặp qua từng tập tin được truyền vào
+for file in "$@"; do
+  status=0
+
+  # Kiểm tra xem tập tin có tồn tại hay không
+  if [[ ! -f "$file" ]]; then
+  
+    echo "______________________________________"
+    echo "Tập tin '$file' không tồn tại!"
+    echo "______________________________________"
+    echo
+    while true; do
+      if [ $status == 1 ]; then
+        break
+      fi
+      sleep 0.05
+    done
+    
+  else
+  
+   echo "______________________________________"
+    echo "***Tập tin '$file'***"
+    while read -r line; do
+      for (( i=0; i<${#line}; i++ )); do
+        echo -n "${line:$i:1}"
+        sleep 0.05
+      done
+    
+      if [ $status == 1 ]; then
+        break
+      fi
+    
+      echo
+      sleep 0.05
+    done < "$file"
+
+    echo "______________________________________"
+    echo
+    echo
+
+    while true; do
+      if [ $status == 1 ]; then
+        break
+      fi
+      sleep 0.05
+    done
+    
+  fi
+done
+
+echo "Kết thúc!"
+
+stty echoctl
+
+trap 2
